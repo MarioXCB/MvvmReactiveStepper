@@ -11,7 +11,7 @@ public class AppViewLocator : IViewLocator
         // Find view's by chopping of the 'Model' on the view model name
         // MyApp.ShellViewModel => MyApp.ShellView
         var viewModelName = viewModel.GetType().FullName;
-        var viewTypeName = viewModelName.TrimEnd("ViewModel".ToCharArray());
+        var viewTypeName = viewModelName.Replace("ViewModels", "Views").TrimEnd("ViewModel".ToCharArray());
 
         try
         {
